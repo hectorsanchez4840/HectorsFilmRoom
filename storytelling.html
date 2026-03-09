@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storytelling Content — Hector's Film Room</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .work-intro {
+    padding: 64px 52px;
+    border-top: 1px solid var(--border);
+    background: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .work-intro-text p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #A09890;
+    margin-bottom: 16px;
+  }
+
+  .work-intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .intro-stat {
+    background: var(--card);
+    padding: 28px 24px;
+  }
+
+  .intro-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .intro-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sub);
+  }
+
+  .work-grid-section {
+    padding: 80px 52px;
+    border-top: 1px solid var(--border);
+  }
+
+  .work-grid-section:nth-child(even) { background: var(--dark); }
+
+  @media (max-width: 960px) {
+    .work-intro { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px; }
+    .work-grid-section { padding: 64px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Hector Sanchez</span>
+    <span class="nav-logo-sub">Hector's Film Room</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#reel">Reel</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-toggle active">Work</span>
+      <div class="nav-dropdown-menu">
+        <a href="storytelling.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Storytelling Content</span>
+          <span class="nav-dropdown-item-sub">Short Docs &amp; Narrative Work</span>
+        </a>
+        <a href="professional.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Professional Work</span>
+          <span class="nav-dropdown-item-sub">Commercial &amp; Branded Projects</span>
+        </a>
+        <a href="social.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Social Media Content</span>
+          <span class="nav-dropdown-item-sub">Short-Form, Reels &amp; Digital</span>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#resume">Resume</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-bg-text">Stories</div>
+  <a href="index.html" class="page-hero-back">← Back to Home</a>
+  <div class="page-hero-eyebrow">
+    <div class="page-hero-eyebrow-line"></div>
+    <span class="page-hero-eyebrow-text">Short Docs &amp; Narrative Work</span>
+  </div>
+  <h1 class="page-hero-title">Storytelling<br><em>Content</em></h1>
+  <p class="page-hero-subtitle">Character-driven · Documentary · Narrative · Real People, Real Moments</p>
+</section>
+
+<!-- INTRO -->
+<div class="work-intro">
+  <div class="work-intro-text">
+    <p>This is where the work lives closest to the mission. Every piece in this section starts with a person — someone whose story deserves to be told, whose voice hasn't been heard loudly enough, whose moment deserves to be documented before it disappears.</p>
+    <p>From short-form documentaries to longer narrative pieces, storytelling content is where culture, character, and camera come together.</p>
+  </div>
+  <div class="work-intro-stats">
+    <div class="intro-stat">
+      <div class="intro-stat-num">Add</div>
+      <div class="intro-stat-label">Projects Below</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">Doc</div>
+      <div class="intro-stat-label">Primary Format</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">Chi</div>
+      <div class="intro-stat-label">Based in Chicago</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">∞</div>
+      <div class="intro-stat-label">Stories Left to Tell</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PROJECT GRID
+     To add a project: copy a .project-card
+     block and paste it inside .project-grid.
+     Use class="project-card large" to span 2 cols.
+     ═══════════════════════════════════════ -->
+<section class="work-grid-section">
+  <div class="project-grid">
+
+    <!-- FEATURED CARD — your strongest doc piece -->
+    <div class="project-card large">
+      <span class="card-num">STORY — 01 · Featured</span>
+      <h3 class="card-title">Add Your Featured Documentary Here</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Describe this film — who the subject is, what the story is about, and what makes it resonate. This is your hero piece, so give it a strong description that makes someone want to click play immediately.</p>
+      <div class="card-footer">
+        <span class="card-role">Director / Producer / Editor</span>
+        <span class="card-link">Watch Film →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">STORY — 02</span>
+      <h3 class="card-title">Documentary / Story Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Describe this piece — the subject, the angle you took, and what made this story worth telling.</p>
+      <div class="card-footer">
+        <span class="card-role">Director / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">STORY — 03</span>
+      <h3 class="card-title">Documentary / Story Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Describe this piece — the subject, the angle you took, and what made this story worth telling.</p>
+      <div class="card-footer">
+        <span class="card-role">Producer / Director</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">STORY — 04</span>
+      <h3 class="card-title">Documentary / Story Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Describe this piece — the subject, the angle you took, and what made this story worth telling.</p>
+      <div class="card-footer">
+        <span class="card-role">Director / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <!-- ↓ ADD MORE STORYTELLING CARDS HERE — copy a block above ↓ -->
+
+  </div>
+</section>
+
+<!-- NAV BETWEEN SECTIONS -->
+<section style="padding: 48px 52px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--surface);">
+  <a href="index.html" style="font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sub); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--sub)'">← Home</a>
+  <a href="professional.html" style="font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sub); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--sub)'">Professional Work →</a>
+</section>
+
+<footer>
+  <span class="footer-left">© 2026 Hector Sanchez</span>
+  <span class="footer-center">Hector's Film Room</span>
+  <span class="footer-right">Chicago, IL · Loyola University</span>
+</footer>
+
+</body>
+</html>

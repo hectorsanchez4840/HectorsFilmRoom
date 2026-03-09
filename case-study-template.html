@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Project Title] — Case Study · Hector's Film Room</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+
+  /* ── CASE STUDY HERO ── */
+  .cs-hero {
+    padding-top: 68px;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cs-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 60% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(166,58,46,0.04) 0%, transparent 60%);
+  }
+
+  .cs-hero-bg-text {
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(140px, 20vw, 300px);
+    font-weight: 700;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--border);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+
+  .cs-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 52px 72px;
+  }
+
+  .cs-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sub);
+    text-decoration: none;
+    margin-bottom: 48px;
+    transition: color 0.2s;
+  }
+
+  .cs-back:hover { color: var(--gold); }
+
+  .cs-category {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .cs-category-line { width: 32px; height: 1px; background: var(--gold); }
+
+  .cs-category-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .cs-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  .cs-title em { font-style: italic; color: var(--gold); }
+
+  .cs-meta {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.25s ease both;
+  }
+
+  .cs-meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+  .cs-meta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sub);
+  }
+
+  .cs-meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  /* ── VIDEO ── */
+  .cs-video {
+    border-top: 1px solid var(--border);
+    padding: 72px 52px;
+    background: var(--black);
+  }
+
+  .cs-video-frame {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .cs-video-frame iframe { width: 100%; height: 100%; border: none; }
+
+  .cs-video-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+  }
+
+  .cs-play {
+    width: 80px; height: 80px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  .cs-video-placeholder p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .cs-video-placeholder span {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--sub);
+  }
+
+  /* ── CASE STUDY BODY ── */
+  .cs-body {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Overview strip */
+  .cs-overview {
+    padding: 72px 52px;
+    border-top: 1px solid var(--border);
+    background: var(--dark);
+  }
+
+  .cs-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .cs-overview-item {
+    background: var(--card);
+    padding: 32px 28px;
+  }
+
+  .cs-overview-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 12px;
+  }
+
+  .cs-overview-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  /* Content sections */
+  .cs-section {
+    padding: 80px 52px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cs-section:nth-child(even) { background: var(--dark); }
+
+  .cs-section-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .cs-section-sidebar { position: sticky; top: 100px; }
+
+  .cs-section-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .cs-section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .cs-section-heading em { font-style: italic; color: var(--gold); }
+
+  .cs-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #A09890;
+    margin-bottom: 20px;
+  }
+
+  .cs-content p:last-child { margin-bottom: 0; }
+
+  /* Pull quote */
+  .cs-pull-quote {
+    margin: 40px 0;
+    padding: 36px 40px;
+    border-left: 2px solid var(--gold);
+    background: var(--surface);
+  }
+
+  .cs-pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--text) !important;
+    margin: 0 !important;
+  }
+
+  /* Process steps */
+  .cs-process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+  }
+
+  .cs-step {
+    display: flex;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .cs-step:first-child { border-top: 1px solid var(--border); }
+
+  .cs-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    min-width: 48px;
+    flex-shrink: 0;
+    transition: color 0.2s;
+  }
+
+  .cs-step:hover .cs-step-num { color: var(--gold); }
+
+  .cs-step-body {}
+
+  .cs-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+
+  .cs-step:hover .cs-step-title { color: var(--gold-lt); }
+
+  .cs-step-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* Results */
+  .cs-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .cs-result-stat {
+    background: var(--card);
+    padding: 36px 32px;
+  }
+
+  .cs-result-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .cs-result-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 12px;
+  }
+
+  .cs-result-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* Learnings */
+  .cs-learnings {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+  }
+
+  .cs-learning {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .cs-learning:first-child { border-top: 1px solid var(--border); }
+
+  .cs-learning-arrow {
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .cs-learning-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #A09890;
+  }
+
+  /* Next project */
+  .cs-next {
+    padding: 72px 52px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cs-next-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 12px;
+  }
+
+  .cs-next-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .cs-next-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    text-decoration: none;
+    padding: 14px 32px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .cs-next-link:hover { background: var(--gold-lt); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .cs-hero-content { padding: 0 24px 56px; }
+    .cs-hero-bg-text { display: none; }
+    .cs-video, .cs-overview, .cs-section, .cs-next { padding: 56px 24px; }
+    .cs-section-layout { grid-template-columns: 1fr; gap: 32px; }
+    .cs-section-sidebar { position: static; }
+    .cs-overview-grid { grid-template-columns: 1fr 1fr; }
+    .cs-results-grid { grid-template-columns: 1fr; }
+    .cs-next { flex-direction: column; gap: 32px; align-items: flex-start; }
+    .cs-meta { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Hector Sanchez</span>
+    <span class="nav-logo-sub">Hector's Film Room</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#reel">Reel</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-toggle active">Work</span>
+      <div class="nav-dropdown-menu">
+        <a href="storytelling.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Storytelling Content</span>
+          <span class="nav-dropdown-item-sub">Short Docs &amp; Narrative Work</span>
+        </a>
+        <a href="professional.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Professional Work</span>
+          <span class="nav-dropdown-item-sub">Commercial &amp; Branded Projects</span>
+        </a>
+        <a href="social.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Social Media Content</span>
+          <span class="nav-dropdown-item-sub">Short-Form, Reels &amp; Digital</span>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#resume">Resume</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════
+     CASE STUDY HERO
+     Fill in: project title, category, and meta fields
+     ══════════════════════════════════════ -->
+<section class="cs-hero">
+  <div class="cs-hero-bg"></div>
+  <div class="cs-hero-bg-text">Case</div>
+  <div class="cs-hero-content">
+    <a href="storytelling.html" class="cs-back">← Back to Storytelling Content</a>
+    <!-- Change href above to match which section this project lives in -->
+
+    <div class="cs-category">
+      <div class="cs-category-line"></div>
+      <!-- Change category label below to match: Storytelling Content / Professional Work / Social Media Content -->
+      <span class="cs-category-text">Storytelling Content · Case Study</span>
+    </div>
+
+    <h1 class="cs-title">
+      Your Project<br><em>Title Here</em>
+    </h1>
+    <!-- Split the title however looks best — first line normal, second line italic gold -->
+
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Year</span>
+        <span class="cs-meta-value">2025</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Format</span>
+        <span class="cs-meta-value">Short Documentary</span>
+        <!-- Options: Short Documentary · Branded Content · Instagram Reel · TikTok Series · etc. -->
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Director / Producer / Editor</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Duration</span>
+        <span class="cs-meta-value">6:30</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label">Client / Context</span>
+        <span class="cs-meta-value">Loyola University / Personal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     VIDEO EMBED
+     Replace placeholder with YouTube or Vimeo iframe when ready
+     ══════════════════════════════════════ -->
+<section class="cs-video">
+  <div class="cs-video-frame">
+    <div class="cs-video-placeholder">
+      <div class="cs-play">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+        </svg>
+      </div>
+      <p>Embed Your Video Here</p>
+      <span>YouTube: &lt;iframe src="https://www.youtube.com/embed/YOUR_ID" width="100%" height="100%" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</span>
+    </div>
+    <!--
+      YOUTUBE:  <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      VIMEO:    <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PROJECT OVERVIEW STRIP
+     Quick stats at a glance
+     ══════════════════════════════════════ -->
+<section class="cs-overview">
+  <div class="cs-overview-grid">
+    <div class="cs-overview-item">
+      <p class="cs-overview-label">Category</p>
+      <p class="cs-overview-value">Short Documentary</p>
+    </div>
+    <div class="cs-overview-item">
+      <p class="cs-overview-label">Tools Used</p>
+      <p class="cs-overview-value">Premiere Pro · DSLR · After Effects</p>
+    </div>
+    <div class="cs-overview-item">
+      <p class="cs-overview-label">Timeline</p>
+      <p class="cs-overview-value">3 weeks pre → 2 days shoot → 1 week post</p>
+      <!-- Adjust timeline to match your actual production -->
+    </div>
+    <div class="cs-overview-item">
+      <p class="cs-overview-label">Deliverable</p>
+      <p class="cs-overview-value">6-minute documentary film</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 01 — THE BRIEF
+     What was the goal, challenge, or starting point?
+     ══════════════════════════════════════ -->
+<section class="cs-section">
+  <div class="cs-section-layout">
+    <div class="cs-section-sidebar">
+      <p class="cs-section-num">01</p>
+      <h2 class="cs-section-heading">The <em>Brief</em></h2>
+    </div>
+    <div class="cs-content">
+      <p>Describe the starting point of this project. What was the goal? What problem were you trying to solve, or what story were you trying to tell? If it was a class project, what was the assignment? If it was client work, what did they come to you with?</p>
+      <p>Be specific. Hiring managers want to understand the constraints you were working within — budget, timeline, access to subjects, equipment limitations. Context makes the work more impressive, not less.</p>
+      <div class="cs-pull-quote">
+        <p>"Add a quote here — from your subject, your client, a professor, or even your own director's note about why this project mattered to you."</p>
+      </div>
+      <p>Any additional context about the brief goes here. What made this project challenging or interesting from the start?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 02 — THE APPROACH
+     How did you think about it? What creative decisions did you make?
+     ══════════════════════════════════════ -->
+<section class="cs-section">
+  <div class="cs-section-layout">
+    <div class="cs-section-sidebar">
+      <p class="cs-section-num">02</p>
+      <h2 class="cs-section-heading">The <em>Approach</em></h2>
+    </div>
+    <div class="cs-content">
+      <p>This is where you show how you think. What was your creative strategy? Why did you make the choices you made — visually, narratively, tonally? What were the alternatives you considered and why did you land where you did?</p>
+      <p>This is the section hiring managers read most carefully. Anyone can say they made a documentary. Not everyone can articulate WHY they approached it the way they did. Show your thinking here.</p>
+      <p>Talk about the visual language you chose, how you structured the story arc, why you interviewed who you interviewed, what you wanted the audience to feel and why.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 03 — THE PROCESS
+     Behind the scenes — pre-production, production, post
+     ══════════════════════════════════════ -->
+<section class="cs-section">
+  <div class="cs-section-layout">
+    <div class="cs-section-sidebar">
+      <p class="cs-section-num">03</p>
+      <h2 class="cs-section-heading">The <em>Process</em></h2>
+    </div>
+    <div class="cs-content">
+      <p>Walk through how you actually made it. This doesn't need to be exhaustive — pick the moments that show your craft, your problem-solving, or your professionalism.</p>
+
+      <div class="cs-process-steps">
+        <div class="cs-step">
+          <span class="cs-step-num">01</span>
+          <div class="cs-step-body">
+            <p class="cs-step-title">Pre-Production</p>
+            <p class="cs-step-desc">How did you prepare? Research, treatment writing, location scouting, subject outreach, shot lists, interview prep. What did you do before you picked up the camera?</p>
+          </div>
+        </div>
+        <div class="cs-step">
+          <span class="cs-step-num">02</span>
+          <div class="cs-step-body">
+            <p class="cs-step-title">Production</p>
+            <p class="cs-step-desc">What happened on the day(s) of filming? Who was involved, what equipment did you use, what challenges came up and how did you handle them?</p>
+          </div>
+        </div>
+        <div class="cs-step">
+          <span class="cs-step-num">03</span>
+          <div class="cs-step-body">
+            <p class="cs-step-title">Post-Production</p>
+            <p class="cs-step-desc">How did you edit? What was your assembly process, how did you structure the story in the edit, what color grade or audio work did you do?</p>
+          </div>
+        </div>
+        <div class="cs-step">
+          <span class="cs-step-num">04</span>
+          <div class="cs-step-body">
+            <p class="cs-step-title">Delivery</p>
+            <p class="cs-step-desc">How and where was this delivered? Screened in class, published online, submitted to a client, posted on social — what happened when it was done?</p>
+          </div>
+        </div>
+        <!-- ADD MORE STEPS AS NEEDED -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 04 — THE RESULT
+     What happened? Metrics, feedback, outcomes
+     ══════════════════════════════════════ -->
+<section class="cs-section">
+  <div class="cs-section-layout">
+    <div class="cs-section-sidebar">
+      <p class="cs-section-num">04</p>
+      <h2 class="cs-section-heading">The <em>Result</em></h2>
+    </div>
+    <div class="cs-content">
+
+      <!-- METRICS — fill in what you have, remove what you don't -->
+      <div class="cs-results-grid">
+        <div class="cs-result-stat">
+          <p class="cs-result-num">0K</p>
+          <p class="cs-result-label">Views</p>
+          <p class="cs-result-desc">Add your view count if published online. If screened in class or privately, remove this stat.</p>
+        </div>
+        <div class="cs-result-stat">
+          <p class="cs-result-num">A</p>
+          <p class="cs-result-label">Grade / Feedback</p>
+          <p class="cs-result-desc">If this was academic work, what grade or feedback did you receive? For client work, what was their response?</p>
+        </div>
+        <div class="cs-result-stat">
+          <p class="cs-result-num">Add</p>
+          <p class="cs-result-label">Your Own Metric</p>
+          <p class="cs-result-desc">Any other outcome worth highlighting — shared by the subject, picked up somewhere, used by a client, etc.</p>
+        </div>
+      </div>
+      <!-- If you don't have metrics, just delete the cs-results-grid block above and write about the outcome in prose below -->
+
+      <p>Describe the outcome in your own words. What was the response — from the subject, your professor, a client, or an audience? What did this project lead to? What are you most proud of about how it turned out?</p>
+      <p>Even if there are no hard metrics, talk about the human result — did your subject feel seen? Did the piece spark a conversation? Did it get shared somewhere meaningful?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 05 — WHAT I LEARNED
+     Reflection — shows maturity and self-awareness
+     ══════════════════════════════════════ -->
+<section class="cs-section">
+  <div class="cs-section-layout">
+    <div class="cs-section-sidebar">
+      <p class="cs-section-num">05</p>
+      <h2 class="cs-section-heading">What I <em>Learned</em></h2>
+    </div>
+    <div class="cs-content">
+      <p>This section is optional but powerful — it shows self-awareness and a growth mindset, which hiring managers love. What would you do differently? What did this project teach you about your craft, your process, or yourself as a storyteller?</p>
+
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <span class="cs-learning-arrow">→</span>
+          <p class="cs-learning-text">Add a specific thing you learned — about production, storytelling, working with subjects, editing, etc. Keep each one concrete and honest.</p>
+        </div>
+        <div class="cs-learning">
+          <span class="cs-learning-arrow">→</span>
+          <p class="cs-learning-text">Another learning — something you'd do differently next time, or a skill this project forced you to develop.</p>
+        </div>
+        <div class="cs-learning">
+          <span class="cs-learning-arrow">→</span>
+          <p class="cs-learning-text">A third learning — could be about collaboration, time management, or a creative instinct this project confirmed for you.</p>
+        </div>
+        <!-- ADD OR REMOVE LEARNINGS AS NEEDED -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     NEXT PROJECT
+     Links to the next case study or back to the work section
+     ══════════════════════════════════════ -->
+<section class="cs-next">
+  <div>
+    <p class="cs-next-label">Next Project</p>
+    <h3 class="cs-next-title">Your Next Project Title</h3>
+    <!-- Change this to the title of the next case study -->
+  </div>
+  <a href="case-study-template.html" class="cs-next-link">View Case Study →</a>
+  <!-- Change href to the actual next case study file -->
+</section>
+
+<footer>
+  <span class="footer-left">© 2026 Hector Sanchez</span>
+  <span class="footer-center">Hector's Film Room</span>
+  <span class="footer-right">Chicago, IL · Loyola University</span>
+</footer>
+
+</body>
+</html>

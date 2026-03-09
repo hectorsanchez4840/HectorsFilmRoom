@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Work — Hector's Film Room</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .work-intro {
+    padding: 64px 52px;
+    border-top: 1px solid var(--border);
+    background: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .work-intro-text p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #A09890;
+    margin-bottom: 16px;
+  }
+
+  .work-intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .intro-stat {
+    background: var(--card);
+    padding: 28px 24px;
+  }
+
+  .intro-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .intro-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sub);
+  }
+
+  .work-grid-section {
+    padding: 80px 52px;
+    border-top: 1px solid var(--border);
+  }
+
+  .work-grid-section:nth-child(even) { background: var(--dark); }
+
+  @media (max-width: 960px) {
+    .work-intro { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px; }
+    .work-grid-section { padding: 64px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Hector Sanchez</span>
+    <span class="nav-logo-sub">Hector's Film Room</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#reel">Reel</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-toggle active">Work</span>
+      <div class="nav-dropdown-menu">
+        <a href="storytelling.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Storytelling Content</span>
+          <span class="nav-dropdown-item-sub">Short Docs &amp; Narrative Work</span>
+        </a>
+        <a href="professional.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Professional Work</span>
+          <span class="nav-dropdown-item-sub">Commercial &amp; Branded Projects</span>
+        </a>
+        <a href="social.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Social Media Content</span>
+          <span class="nav-dropdown-item-sub">Short-Form, Reels &amp; Digital</span>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#resume">Resume</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-bg-text">Work</div>
+  <a href="index.html" class="page-hero-back">← Back to Home</a>
+  <div class="page-hero-eyebrow">
+    <div class="page-hero-eyebrow-line"></div>
+    <span class="page-hero-eyebrow-text">Commercial &amp; Branded Projects</span>
+  </div>
+  <h1 class="page-hero-title">Professional<br><em>Work</em></h1>
+  <p class="page-hero-subtitle">Branded Content · Commercial · Client Work · Concept to Delivery</p>
+</section>
+
+<!-- INTRO -->
+<div class="work-intro">
+  <div class="work-intro-text">
+    <p>Professional work is where storytelling meets strategy. Every branded or commercial project here started with a brief, a client, and a goal — and ended with something that actually moved people. That's the standard.</p>
+    <p>From branded content to commercial production, this section shows the ability to execute on someone else's vision while still bringing a distinct creative point of view to the table.</p>
+  </div>
+  <div class="work-intro-stats">
+    <div class="intro-stat">
+      <div class="intro-stat-num">Add</div>
+      <div class="intro-stat-label">Projects Below</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">Brand</div>
+      <div class="intro-stat-label">Primary Format</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">Chi</div>
+      <div class="intro-stat-label">Based in Chicago</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">C2D</div>
+      <div class="intro-stat-label">Concept to Delivery</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT GRID -->
+<section class="work-grid-section">
+  <div class="project-grid">
+
+    <div class="project-card large">
+      <span class="card-num">PRO — 01 · Featured</span>
+      <h3 class="card-title">Add Your Featured Commercial or Brand Project</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Describe the client or brand, the brief you were given, the concept you developed, and what you delivered. Include your specific role and what made this project successful.</p>
+      <div class="card-footer">
+        <span class="card-role">Director / Producer / Editor</span>
+        <span class="card-link">View Project →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">PRO — 02</span>
+      <h3 class="card-title">Commercial / Brand Project</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Client, concept, your role, and what you delivered. Keep it tight and results-focused.</p>
+      <div class="card-footer">
+        <span class="card-role">Director / Editor</span>
+        <span class="card-link">View →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">PRO — 03</span>
+      <h3 class="card-title">Commercial / Brand Project</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Client, concept, your role, and what you delivered. Keep it tight and results-focused.</p>
+      <div class="card-footer">
+        <span class="card-role">Producer / Editor</span>
+        <span class="card-link">View →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">PRO — 04</span>
+      <h3 class="card-title">Commercial / Brand Project</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Client, concept, your role, and what you delivered. Keep it tight and results-focused.</p>
+      <div class="card-footer">
+        <span class="card-role">Director / Editor</span>
+        <span class="card-link">View →</span>
+      </div>
+    </div>
+
+    <!-- ↓ ADD MORE PROFESSIONAL CARDS HERE ↓ -->
+
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<section style="padding: 48px 52px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--surface);">
+  <a href="storytelling.html" style="font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sub); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--sub)'">← Storytelling Content</a>
+  <a href="social.html" style="font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sub); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--sub)'">Social Media Content →</a>
+</section>
+
+<footer>
+  <span class="footer-left">© 2026 Hector Sanchez</span>
+  <span class="footer-center">Hector's Film Room</span>
+  <span class="footer-right">Chicago, IL · Loyola University</span>
+</footer>
+
+</body>
+</html>

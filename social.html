@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Content — Hector's Film Room</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .work-intro {
+    padding: 64px 52px;
+    border-top: 1px solid var(--border);
+    background: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .work-intro-text p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #A09890;
+    margin-bottom: 16px;
+  }
+
+  .work-intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .intro-stat {
+    background: var(--card);
+    padding: 28px 24px;
+  }
+
+  .intro-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .intro-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sub);
+  }
+
+  .work-grid-section {
+    padding: 80px 52px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Social grid uses more columns since short-form = more volume */
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .platform-tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 960px) {
+    .work-intro { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px; }
+    .work-grid-section { padding: 64px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Hector Sanchez</span>
+    <span class="nav-logo-sub">Hector's Film Room</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#reel">Reel</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-toggle active">Work</span>
+      <div class="nav-dropdown-menu">
+        <a href="storytelling.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Storytelling Content</span>
+          <span class="nav-dropdown-item-sub">Short Docs &amp; Narrative Work</span>
+        </a>
+        <a href="professional.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Professional Work</span>
+          <span class="nav-dropdown-item-sub">Commercial &amp; Branded Projects</span>
+        </a>
+        <a href="social.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-item-main">Social Media Content</span>
+          <span class="nav-dropdown-item-sub">Short-Form, Reels &amp; Digital</span>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#resume">Resume</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-bg-text">Social</div>
+  <a href="index.html" class="page-hero-back">← Back to Home</a>
+  <div class="page-hero-eyebrow">
+    <div class="page-hero-eyebrow-line"></div>
+    <span class="page-hero-eyebrow-text">Short-Form, Reels &amp; Digital</span>
+  </div>
+  <h1 class="page-hero-title">Social Media<br><em>Content</em></h1>
+  <p class="page-hero-subtitle">TikTok · Instagram Reels · YouTube Shorts · Stop-the-Scroll Storytelling</p>
+</section>
+
+<!-- INTRO -->
+<div class="work-intro">
+  <div class="work-intro-text">
+    <p>Short-form is its own language. You've got seconds to earn someone's attention, and the only way to do it is with a cinematic eye and an instinct for the hook. This section is where that skill lives.</p>
+    <p>From TikToks to Reels to YouTube Shorts — digital-first content built to stop the scroll, hold the watch time, and leave people wanting more. Same story-first approach, compressed into a different format.</p>
+  </div>
+  <div class="work-intro-stats">
+    <div class="intro-stat">
+      <div class="intro-stat-num">Add</div>
+      <div class="intro-stat-label">Projects Below</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">&lt;60s</div>
+      <div class="intro-stat-label">Primary Format</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">3+</div>
+      <div class="intro-stat-label">Platforms</div>
+    </div>
+    <div class="intro-stat">
+      <div class="intro-stat-num">Hook</div>
+      <div class="intro-stat-label">Always First</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT GRID -->
+<section class="work-grid-section">
+  <div class="social-grid">
+
+    <div class="project-card large">
+      <span class="card-num">SOC — 01 · Featured</span>
+      <span class="platform-tag">Instagram Reels</span>
+      <h3 class="card-title">Add Your Best Short-Form Piece Here</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">What was the concept, what platform was it made for, what made it perform? Include any metrics if you have them — views, shares, reach. Numbers matter here.</p>
+      <div class="card-footer">
+        <span class="card-role">Creator / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">SOC — 02</span>
+      <span class="platform-tag">TikTok</span>
+      <h3 class="card-title">Short-Form Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Concept, platform, and what made it work. Add metrics if you have them.</p>
+      <div class="card-footer">
+        <span class="card-role">Creator / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">SOC — 03</span>
+      <span class="platform-tag">YouTube Shorts</span>
+      <h3 class="card-title">Short-Form Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Concept, platform, and what made it work. Add metrics if you have them.</p>
+      <div class="card-footer">
+        <span class="card-role">Creator / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">SOC — 04</span>
+      <span class="platform-tag">Instagram Reels</span>
+      <h3 class="card-title">Short-Form Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Concept, platform, and what made it work. Add metrics if you have them.</p>
+      <div class="card-footer">
+        <span class="card-role">Creator / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="card-num">SOC — 05</span>
+      <span class="platform-tag">TikTok</span>
+      <h3 class="card-title">Short-Form Title</h3>
+      <div class="card-bar"></div>
+      <p class="card-desc">Concept, platform, and what made it work. Add metrics if you have them.</p>
+      <div class="card-footer">
+        <span class="card-role">Creator / Editor</span>
+        <span class="card-link">Watch →</span>
+      </div>
+    </div>
+
+    <!-- ↓ ADD MORE SOCIAL CARDS HERE — change the platform-tag text to match ↓ -->
+
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<section style="padding: 48px 52px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--surface);">
+  <a href="professional.html" style="font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sub); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--sub)'">← Professional Work</a>
+  <a href="index.html#contact" style="font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sub); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--sub)'">Get in Touch →</a>
+</section>
+
+<footer>
+  <span class="footer-left">© 2026 Hector Sanchez</span>
+  <span class="footer-center">Hector's Film Room</span>
+  <span class="footer-right">Chicago, IL · Loyola University</span>
+</footer>
+
+</body>
+</html>
