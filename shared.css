@@ -10,12 +10,12 @@
   --surface: #1C1916;
   --card:    #221F1B;
   --border:  #2E2A25;
-  --gold:    #C9A84C;
-  --gold-lt: #E2C47A;
+  --gold:    #C0392B;
+  --gold-lt: #E05444;
   --red:     #A63A2E;
   --text:    #F0EAE0;
-  --muted:   #7A7168;
-  --sub:     #4A4540;
+  --muted:   #9A9088;
+  --sub:     #6A6560;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,7 +93,7 @@ nav {
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.25s;
   position: relative;
 }
 
@@ -141,7 +141,7 @@ nav {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 20px);
+  top: calc(100% + 4px);
   right: 0;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -149,13 +149,22 @@ nav {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
-  transition: all 0.2s;
+  transition: all 0.25s ease;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu {
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
+}
+
+.nav-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
 .nav-dropdown-item {
@@ -237,7 +246,7 @@ nav {
   padding: 40px 36px;
   position: relative;
   overflow: hidden;
-  transition: background 0.25s;
+  transition: background 0.25s, transform 0.25s;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -254,7 +263,7 @@ nav {
   transition: height 0.3s ease;
 }
 
-.project-card:hover { background: var(--surface); }
+.project-card:hover { background: var(--surface); transform: translateY(-1px); }
 .project-card:hover::before { height: 100%; }
 
 .project-card.large {
@@ -337,7 +346,7 @@ nav {
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  min-height: 340px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -435,7 +444,7 @@ nav {
 footer {
   background: var(--black);
   border-top: 1px solid var(--border);
-  padding: 28px 52px;
+  padding: 36px 52px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -516,4 +525,20 @@ footer {
   .page-hero-bg-text { display: none; }
   .project-card.large { grid-column: span 1; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+}
+
+/* ── SCROLL-BASED NAV HIGHLIGHTING ── */
+.nav-links a.active,
+.nav-links a.active::after {
+  color: var(--gold);
+  width: 100%;
+}
+
+.nav-links a.section-active {
+  color: var(--text);
+}
+
+.nav-links a.section-active::after {
+  width: 100%;
+  background: var(--gold);
 }
