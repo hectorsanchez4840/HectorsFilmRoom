@@ -661,7 +661,24 @@ footer {
     <li><a href="index.html#resume">Resume</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <span class="mobile-menu-section">Work</span>
+  <a href="storytelling.html" onclick="closeMenu()">Storytelling Content</a>
+  <a href="professional.html" onclick="closeMenu()">Professional Work</a>
+  <a href="social.html" onclick="closeMenu()">Social Media Content</a>
+  <span class="mobile-menu-section">More</span>
+  <a href="index.html#services" onclick="closeMenu()">Services</a>
+  <a href="index.html#resume" onclick="closeMenu()">Resume</a>
+  <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+  <a href="inquiry.html" class="highlight" onclick="closeMenu()">Start a Project</a>
+</div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -783,5 +800,17 @@ footer {
   <span class="footer-right">Chicago, IL · Loyola University</span>
 </footer>
 
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+</script>
 </body>
 </html>

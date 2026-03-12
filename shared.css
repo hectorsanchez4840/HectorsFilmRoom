@@ -542,3 +542,192 @@ footer {
   width: 100%;
   background: var(--gold);
 }
+
+/* ════════════════════════════════════════
+   MOBILE — iPhone optimized
+   ════════════════════════════════════════ */
+
+/* Hide desktop nav links on mobile, show hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: all 0.3s ease;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 68px;
+  left: 0; right: 0;
+  background: rgba(13,11,9,0.98);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 24px 28px 32px;
+  gap: 0;
+  z-index: 99;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu a.highlight { color: var(--gold); }
+
+.mobile-menu-section {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sub);
+  padding: 20px 0 8px;
+}
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* HERO */
+  .hero { min-height: 100svh; }
+  .hero-content { padding: 0 20px 60px; }
+  .hero-name { font-size: clamp(52px, 14vw, 80px); }
+  .hero-tagline { font-size: 17px; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .btn-primary, .btn-ghost { text-align: center; padding: 16px 24px; width: 100%; }
+  .hero-scroll { display: none; }
+
+  /* SECTIONS */
+  .section-wrap { padding: 56px 20px; }
+  .section-title { font-size: 28px; }
+
+  /* ABOUT */
+  .about-layout { grid-template-columns: 1fr; gap: 36px; }
+  .about-quote { position: static; font-size: 22px; }
+  .about-text p { font-size: 15px; }
+  .skills-list { gap: 6px; }
+  .skill-tag { font-size: 8px; padding: 6px 10px; }
+  .directors-statement { padding: 28px 20px; }
+  .ds-quote { font-size: 20px; }
+  .ds-body { font-size: 14px; }
+
+  /* PROJECT GRID */
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card { padding: 28px 24px; }
+  .project-card.large { grid-column: span 1; padding: 36px 24px; }
+  .project-card.large .card-title { font-size: 26px; }
+  .card-title { font-size: 20px; }
+  .card-link { opacity: 1; } /* Always show on mobile since no hover */
+
+  /* PAGE HERO */
+  .page-hero { padding: 68px 20px 48px; min-height: 300px; }
+  .page-hero-title { font-size: clamp(40px, 10vw, 64px); }
+  .page-hero-bg-text { display: none; }
+
+  /* RESUME */
+  .resume-layout { grid-template-columns: 1fr; gap: 40px; }
+  .resume-entry-top { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .resume-entry-title { font-size: 17px; }
+
+  /* CONTACT PATHS */
+  .contact-paths { grid-template-columns: 1fr; }
+  .contact-path-divider { width: 100%; height: 1px; }
+  .contact-path-divider span { writing-mode: horizontal-tb; padding: 4px 8px; }
+  .contact-path { padding: 32px 24px; }
+  .contact-path-title { font-size: 22px; }
+  .contact-bottom { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+  .contact-headline { font-size: 32px; }
+
+  /* SERVICES */
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 32px 24px; }
+  .services-cta { flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px 24px; }
+  .services-cta-heading { font-size: 26px; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card { padding: 32px 24px; }
+  .featured-testimonial .testimonial-text { font-size: 18px; }
+  .testimonial-text { font-size: 16px; }
+
+  /* FOOTER */
+  footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px 20px; }
+
+  /* WORK INTRO */
+  .work-intro { grid-template-columns: 1fr; gap: 36px; padding: 40px 20px; }
+  .work-intro-stats { grid-template-columns: 1fr 1fr; }
+  .intro-stat { padding: 20px 16px; }
+  .intro-stat-num { font-size: 32px; }
+
+  /* CATEGORY HEADER */
+  .category-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .category-title { font-size: 36px; }
+  .work-section { padding: 56px 20px; }
+
+  /* REEL */
+  .reel-section { padding: 56px 20px; }
+
+  /* INQUIRY */
+  .inquiry-hero-content { padding: 0 20px 48px; }
+  .inquiry-title { font-size: clamp(40px, 10vw, 64px); }
+  .inquiry-body { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
+  .inquiry-sidebar { position: static; }
+  .inquiry-process { padding: 40px 20px; }
+  .inquiry-process-steps { grid-template-columns: 1fr 1fr; }
+
+  /* CASE STUDY */
+  .cs-hero-content { padding: 0 20px 48px; }
+  .cs-title { font-size: clamp(40px, 10vw, 64px); }
+  .cs-meta { gap: 20px; flex-wrap: wrap; }
+  .cs-video, .cs-overview, .cs-section, .cs-next { padding: 48px 20px; }
+  .cs-section-layout { grid-template-columns: 1fr; gap: 24px; }
+  .cs-section-sidebar { position: static; }
+  .cs-overview-grid { grid-template-columns: 1fr 1fr; }
+  .cs-results-grid { grid-template-columns: 1fr; }
+  .cs-next { flex-direction: column; gap: 24px; align-items: flex-start; }
+  .cs-section-heading { font-size: 28px; }
+  .service-checks { grid-template-columns: 1fr; }
+
+  /* WORK PREVIEW */
+  .work-preview { padding: 56px 20px; }
+  .work-preview-grid { grid-template-columns: 1fr; }
+  .wpc-title { font-size: 24px; }
+  .wpc-link { opacity: 1; }
+}
+
+@media (max-width: 400px) {
+  .hero-name { font-size: 48px; }
+  .inquiry-process-steps { grid-template-columns: 1fr; }
+  .cs-overview-grid { grid-template-columns: 1fr; }
+  .work-intro-stats { grid-template-columns: 1fr; }
+}

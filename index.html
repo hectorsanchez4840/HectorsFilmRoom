@@ -1527,7 +1527,26 @@ footer {
     <li><a href="inquiry.html" style="color: var(--gold);">Start a Project</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-menu-section">Navigate</span>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#reel" onclick="closeMenu()">Reel</a>
+  <span class="mobile-menu-section">Work</span>
+  <a href="storytelling.html" onclick="closeMenu()">Storytelling Content</a>
+  <a href="professional.html" onclick="closeMenu()">Professional Work</a>
+  <a href="social.html" onclick="closeMenu()">Social Media Content</a>
+  <span class="mobile-menu-section">More</span>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#resume" onclick="closeMenu()">Resume</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="inquiry.html" class="highlight" onclick="closeMenu()">Start a Project</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1591,15 +1610,14 @@ footer {
       <p class="about-quote">Every great story starts with a moment. For me, it was realizing I didn't just want to watch them — I wanted to <em>build</em> them.</p>
     </div>
     <div class="about-text">
-      <p>I'm Hector Sanchez, a creative producer, director, and storyteller out of Chicago. I make docs, branded content, and digital-first stories that are grounded in real people and real moments — with a cinematic touch that makes them hit different.</p>
-      <p>Currently sharpening my craft at Loyola University Chicago, earning my Master's in Digital Media and Storytelling, and running my own creative venture <strong>Hector's Film Room</strong>. My work lives at the intersection of culture, character, and camera.</p>
-      <p>I'm building toward a career behind the lens — features, documentaries, and digital-first series that give people more than just a highlight. They get the whole story.</p>
+      <p>I'm Hector Sanchez, a creative producer, director, and storyteller out of Chicago. I make docs, branded content, and digital-first stories that are grounded in real people and real moments, with a cinematic touch that makes them hit different.</p>
+      <p>Currently earning my Master's in Digital Media and Storytelling at Loyola University Chicago, and recently completed an editorial internship at Creative Dynamic in Naperville, where I cut trailers, promos, and social content in a professional post-production pipeline. I run my own creative venture <strong>Hector's Film Room</strong>, and my work lives at the intersection of culture, character, and camera.</p>
+      <p>I'm building toward a career behind the lens, features, documentaries, and digital-first series that give people more than just a highlight. They get the whole story.</p>
 
       <div class="directors-statement">
         <p class="ds-label">Director's Statement</p>
-        <blockquote class="ds-quote">I make films because some stories don't get told — not because they aren't worth telling, but because nobody showed up with a camera.</blockquote>
-        <p class="ds-body" style="color: #B8B0A8;">My work is rooted in three things: the athlete nobody wrote about, the culture that's shifting before anyone notices, and the person whose name never makes the headline. Sports gave me my first language for storytelling — the discipline, the sacrifice, the humanity behind the highlight reel. But culture taught me that those same stories exist everywhere, in every block, every community, every generation trying to hold onto something real.</p>
-        <p class="ds-body" style="color: #B8B0A8;">I don't just document. I listen first. Then I point the camera at what I heard.</p>
+        <blockquote class="ds-quote">I make films because some stories don't get told, not because they aren't worth telling, but because nobody showed up with a camera.</blockquote>
+        <p class="ds-body" style="color: #B8B0A8;">My work is rooted in three things: the athlete nobody wrote about, the culture that's shifting before anyone notices, and the person whose name never makes the headline. Sports gave me my first language for storytelling, the discipline, the sacrifice, the humanity behind the highlight reel. But culture taught me that those same stories exist everywhere, in every block, every community, every generation trying to hold onto something real.</p>
       </div>
 
       <div class="skills-section">
@@ -1691,19 +1709,19 @@ footer {
       <h3>Experience</h3>
       <div class="resume-entry">
         <div class="resume-entry-top">
+          <span class="resume-entry-title">Editorial Intern</span>
+          <span class="resume-entry-date">Jan 2026 – May 2026</span>
+        </div>
+        <div class="resume-entry-org">Creative Dynamic · Naperville, IL</div>
+        <p class="resume-entry-desc">Condensed a 22-minute episode into a 6-minute narrative cut designed to drive full-episode viewership, identifying key story beats, building tension arc, and preserving the cliffhanger hook as the capstone deliverable. Edited trailers, promos, and social content (15–90s) across Premiere Pro and DaVinci Resolve. Created motion graphics including lower thirds, title cards, and animated bumpers in After Effects. Collaborated on QC watchdowns, episode archiving, and Frame.io delivery for near-final cuts.</p>
+      </div>
+      <div class="resume-entry">
+        <div class="resume-entry-top">
           <span class="resume-entry-title">Founder &amp; Creative Director</span>
           <span class="resume-entry-date">2023 – Present</span>
         </div>
         <div class="resume-entry-org">Hector's Film Room</div>
         <p class="resume-entry-desc">Independent creative production venture. Directing, producing, and editing short-form and documentary content across sports, culture, and social storytelling.</p>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-entry-top">
-          <span class="resume-entry-title">Add Role Title</span>
-          <span class="resume-entry-date">Add Dates</span>
-        </div>
-        <div class="resume-entry-org">Add Organization</div>
-        <p class="resume-entry-desc">Describe what you did, what you produced, and the impact it had.</p>
       </div>
       <div class="resume-entry">
         <div class="resume-entry-top">
@@ -1880,10 +1898,10 @@ footer {
       <p class="contact-bottom-label">Drop me a line</p>
       <p class="contact-bottom-sub">I'm open to job opportunities, internships, creative collaborations, and general conversations about storytelling and film. Response time is usually within 24–48 hours.</p>
       <div class="contact-socials">
-        <a href="mailto:your@email.com" class="contact-item">
+        <a href="/cdn-cgi/l/email-protection#3e47514b4c7e5b535f5752105d5153" class="contact-item">
           <div class="contact-item-left">
             <span class="contact-item-label">Email</span>
-            <span class="contact-item-value">your@email.com</span>
+            <span class="contact-item-value"><span class="__cf_email__" data-cfemail="e39a8c9691a3868e828a8fcd808c8e">[email&#160;protected]</span></span>
           </div>
           <span class="contact-arrow">→</span>
         </a>
@@ -1945,7 +1963,7 @@ footer {
   <span class="footer-right">Chicago, IL · Loyola University</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── SCROLL-BASED NAV HIGHLIGHTING ──
   const sections = [
     { id: 'about',        link: 'a[href="#about"]' },
@@ -1969,13 +1987,4 @@ footer {
     });
 
     if (current) {
-      const link = document.querySelector(`.nav-links a[href="#${current}"]`);
-      if (link) link.classList.add('section-active');
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-</script>
-</body>
-</html>
+      const link 
